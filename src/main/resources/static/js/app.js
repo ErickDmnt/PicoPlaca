@@ -18,5 +18,5 @@ document.getElementById("picoPlacaForm").onsubmit = async function(event) {
     });
 
     const result = await response.json();
-    document.getElementById("resultado").textContent = result.message;
+    document.getElementById("resultado").innerHTML = result.message.replace(/\n/g, "<br>");
 }

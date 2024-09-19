@@ -29,10 +29,10 @@ public class PicoPlacaController {
             boolean puedeCircular = predictor.puedeCircular(placa, date, hour);
 
             if (puedeCircular) {
-                response.put("message", "El vehículo con placa " + plate + " PUEDE circular.");
+                response.put("message", "El vehículo con placa " + plate + "\nPUEDE circular.");
                
             } else {
-                response.put("message", "El vehículo con placa " + plate + " NO PUEDE circular.");
+                response.put("message", "El vehículo con placa " + plate + "\nNO PUEDE circular.");
                
             }
         } catch (ParseException e) {
