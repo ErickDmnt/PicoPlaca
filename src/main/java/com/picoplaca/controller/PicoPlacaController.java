@@ -30,8 +30,10 @@ public class PicoPlacaController {
 
             if (puedeCircular) {
                 response.put("message", "El vehículo con placa " + plate + " PUEDE circular.");
+               
             } else {
                 response.put("message", "El vehículo con placa " + plate + " NO PUEDE circular.");
+               
             }
         } catch (ParseException e) {
             response.put("message", "Error: Formato de fecha incorrecto.");

@@ -23,9 +23,7 @@ public class PicoPlacaPredictor {
         int ultimoDigito = placa.obtenerUltimoDigito();
         String diaSemana = obtenerDiaSemana(fecha);
 
-        if (!esDiaHabil(diaSemana)) {
-            return true;
-        }
+        
 
         Optional<Restriccion> restriccionOpt = restriccionRepository.findById(ultimoDigito);
 
@@ -64,10 +62,5 @@ public class PicoPlacaPredictor {
             default:
                 return "Fin de Semana";
         }
-    }
-
-    private boolean esDiaHabil(String diaSemana) {
-        return diaSemana.equals("Lunes") || diaSemana.equals("Martes") || diaSemana.equals("Miércoles")
-                || diaSemana.equals("Jueves") || diaSemana.equals("Viernes");
     }
 }
