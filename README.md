@@ -6,6 +6,7 @@ PICOPLACA APPLICATION is an app for predicting which vehicles can circulate base
 
 - Restrictions: Define restrictions based on the last digit of the vehicle's plate, day of the week and hour entered.
 - RestApi: Used to interact and easy integration  with Frontend applications.
+- Schema: Schema and data.sql added for quick integration of restrictions into the database.
 
 ## Technologies used
 
@@ -45,9 +46,4 @@ PICOPLACA APPLICATION is an app for predicting which vehicles can circulate base
 
 
 
-### Backend (Spring Boot)
-1. Clona el repositorio.
-2. Ve al directorio del proyecto.
-3. Ejecuta el siguiente comando para compilar el proyecto:
-   ```bash
-   mvn clean install
+
