@@ -12,6 +12,8 @@ public class PicoYPlaca {
         return numeroPlaca;
     }
 
+    		//obtenemos el String completo, sin embargo 
+    		//tomamos el ultimo caracter para revisarlo (-1)
     public int obtenerUltimoDigito() {
         char ultimoCaracter = numeroPlaca.charAt(numeroPlaca.length() - 1);
         return Character.getNumericValue(ultimoCaracter);
