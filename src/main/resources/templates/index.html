@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pico y Placa Predictor</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2 >PICO Y PLACA PREDICTOR - QUITO</h2>
+        <form id="picoPlacaForm">
+            <label for="plate">Plate Number</label>
+            <input type="text" id="plate" name="plate" placeholder="Enter your plate number ex. ABC123" required>
+
+            <label for="date">Date (dd-mm-yyyy)</label>
+            <input type="text" id="date" name="date" placeholder="Enter the current date ex. 01-01-2024" required>
+
+            <label for="hour">Hour (24-hour format)</label>
+            <input type="number" id="hour" name="hour" placeholder="Enter the current hour" min="0" max="23" required>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        document.getElementById("picoPlacaForm").onsubmit = async function(event) {
+            event.preventDefault();
+
+            const plate = document.getElementById("plate").value;
+            const date = document.getElementById("date").value;
+            const hour = document.getElementById("hour").value;
+
+            const response = await fetch("/api/verificar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    plate: plate,
+                    date: date,
+                    hour: parseInt(hour)
+                })
+            });
+
+            const result = await response.json();
+            document.getElementById("resultado").textContent = result.message;
+        }
+    </script>
+</body>
+</html>
